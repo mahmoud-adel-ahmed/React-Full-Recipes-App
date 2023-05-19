@@ -32,41 +32,53 @@ const Veggie = () => {
 
   return (
     <div>
-      <Wrapper>
-        <h3>Our Vegetarian Picks</h3>
-        <Splide
-          options={{
-            perPage: 1,
-            arrows: false,
-            pagination: false,
-            drag: "free",
-            gap: "1.5rem",
-            mediaQuery: "min",
-            breakpoints: {
-              720: {
-                perPage: 2,
+      {veggie.length ? (
+        <Wrapper>
+          <h3>Our Vegetarian Picks</h3>
+          <Splide
+            options={{
+              perPage: 1,
+              arrows: false,
+              pagination: false,
+              drag: "free",
+              gap: "1.5rem",
+              mediaQuery: "min",
+              breakpoints: {
+                720: {
+                  perPage: 2,
+                },
+                1200: {
+                  perPage: 3,
+                },
               },
-              1200: {
-                perPage: 3,
-              },
-            },
+            }}
+          >
+            {veggie?.map((recipe) => {
+              return (
+                <SplideSlide key={recipe.id}>
+                  <Link to={`recipe/${recipe.id}`}>
+                    <Card>
+                      <p>{recipe.title}</p>
+                      <img src={recipe?.image} alt={recipe.title} />
+                      <Gradient />
+                    </Card>
+                  </Link>
+                </SplideSlide>
+              );
+            })}
+          </Splide>
+        </Wrapper>
+      ) : (
+        <h4
+          style={{
+            textAlign: "center",
+            color: "#ccc",
+            textTransform: "capitalize",
           }}
         >
-          {veggie?.map((recipe) => {
-            return (
-              <SplideSlide key={recipe.id}>
-                <Link to={`recipe/${recipe.id}`}>
-                  <Card>
-                    <p>{recipe.title}</p>
-                    <img src={recipe?.image} alt={recipe.title} />
-                    <Gradient />
-                  </Card>
-                </Link>
-              </SplideSlide>
-            );
-          })}
-        </Splide>
-      </Wrapper>
+          loading veggie and popular recipes...
+        </h4>
+      )}
     </div>
   );
 };

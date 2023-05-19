@@ -80,7 +80,7 @@ let List = styled.div`
   justify-content: center;
   margin: 2rem 0;
   text-align: center;
-  gap: 1rem;
+  /* gap: 1rem; */
 `;
 
 let StyledNavLink = styled(NavLink)`

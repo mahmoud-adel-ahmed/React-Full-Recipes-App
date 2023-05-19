@@ -47,7 +47,7 @@ const Cuisine = () => {
             textTransform: "capitalize",
           }}
         >
-          loading cuisine recipes...
+          loading {type} cuisine recipes...
         </h4>
       )}
     </Grid>

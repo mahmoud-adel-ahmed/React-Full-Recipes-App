@@ -32,44 +32,48 @@ const Popular = () => {
 
   return (
     <div>
-      <Wrapper>
-        <h3>Popular Picks</h3>
-        <Splide
-          options={{
-            perPage: 1,
-            arrows: false,
-            pagination: false,
-            drag: "free",
-            gap: "1.5rem",
-            mediaQuery: "min",
-            breakpoints: {
-              768: {
-                perPage: 2,
+      {popular.length ? (
+        <Wrapper>
+          <h3>Popular Picks</h3>
+          <Splide
+            options={{
+              perPage: 1,
+              arrows: false,
+              pagination: false,
+              drag: "free",
+              gap: "1.5rem",
+              mediaQuery: "min",
+              breakpoints: {
+                768: {
+                  perPage: 2,
+                },
+                992: {
+                  perPage: 3,
+                },
+                1200: {
+                  perPage: 4,
+                },
               },
-              992: {
-                perPage: 3,
-              },
-              1200: {
-                perPage: 4,
-              },
-            },
-          }}
-        >
-          {popular?.map((recipe) => {
-            return (
-              <SplideSlide key={recipe.id}>
-                <Link to={`recipe/${recipe.id}`}>
-                  <Card>
-                    <p>{recipe.title}</p>
-                    <img src={recipe.image} alt={recipe.title} />
-                    <Gradient />
-                  </Card>
-                </Link>
-              </SplideSlide>
-            );
-          })}
-        </Splide>
-      </Wrapper>
+            }}
+          >
+            {popular?.map((recipe) => {
+              return (
+                <SplideSlide key={recipe.id}>
+                  <Link to={`recipe/${recipe.id}`}>
+                    <Card>
+                      <p>{recipe.title}</p>
+                      <img src={recipe.image} alt={recipe.title} />
+                      <Gradient />
+                    </Card>
+                  </Link>
+                </SplideSlide>
+              );
+            })}
+          </Splide>
+        </Wrapper>
+      ) : (
+        <></>
+      )}
     </div>
   );
 };
