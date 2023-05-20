@@ -92,8 +92,8 @@ let StyledNavLink = styled(NavLink)`
   background: linear-gradient(35deg, #494949, #313131);
   border-radius: 50%;
   height: 6rem;
-  width: 6rem;
-  transform: scale(0.7);
+  min-width: 6rem;
+  transform: scale(0.6);
   text-decoration: none;
   text-align: center;
   h4,
