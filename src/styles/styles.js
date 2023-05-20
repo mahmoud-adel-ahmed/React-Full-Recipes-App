@@ -55,13 +55,13 @@ let StyledForm = styled.form`
   justify-content: center;
   align-items: center;
   width: min(45rem, 100%);
-  margin: 3rem auto;
+  margin: 2rem auto;
   input {
     background: linear-gradient(35deg, #494949, #313131);
     color: white;
     width: 100%;
-    padding: 1rem 3rem;
-    font-size: 1.3rem;
+    padding: 0.8rem 3rem;
+    font-size: 1.2rem;
     border: 0;
     outline: 0;
     border-radius: 1rem;
@@ -78,7 +78,7 @@ let StyledForm = styled.form`
 let List = styled.div`
   display: flex;
   justify-content: center;
-  margin: 2rem 0;
+  margin: 1rem 0;
   text-align: center;
   /* gap: 1rem; */
 `;
@@ -92,8 +92,8 @@ let StyledNavLink = styled(NavLink)`
   background: linear-gradient(35deg, #494949, #313131);
   border-radius: 50%;
   height: 6rem;
-  min-width: 6rem;
-  transform: scale(0.8);
+  width: 6rem;
+  transform: scale(0.7);
   text-decoration: none;
   text-align: center;
   h4,
@@ -133,7 +133,7 @@ let GridCard = styled.div`
 `;
 
 let DetailWrapper = styled.div`
-  margin-top: 10rem;
+  margin-top: 7rem;
   display: flex;
   flex-direction: column;
   margin-bottom: 5rem;
@@ -149,7 +149,7 @@ let DetailWrapper = styled.div`
     margin-bottom: 2rem;
   }
   li {
-    font-size: 1.2rem;
+    font-size: 1rem;
     line-height: 2.5rem;
   }
   ul {
@@ -158,8 +158,8 @@ let DetailWrapper = styled.div`
   .img {
     width: 100%;
     height: 15rem;
-    max-height: 18rem;
-    margin-block: 5rem;
+    max-height: 22rem;
+    margin-block: 7rem;
     @media screen and (min-width: 992px) {
       margin-right: 2rem;
       width: 43%;
@@ -191,7 +191,15 @@ let Info = styled.div`
     h3 {
       font-size: 1rem;
       &:first-of-type {
-        margin-top: 0.5rem;
+        margin-top: 2rem;
+      }
+      ol {
+        li {
+          list-style: none;
+        }
+      }
+      a {
+        text-decoration: none;
       }
     }
   }
@@ -200,6 +208,9 @@ let Info = styled.div`
     list-style: inside;
     line-height: 1;
     padding: 0 0.5rem;
+    li {
+      font-size: 1rem;
+    }
   }
 `;
 

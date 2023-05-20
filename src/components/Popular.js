@@ -20,6 +20,7 @@ const Popular = () => {
         );
         let { recipes } = response.data;
         localStorage.setItem("popular", JSON.stringify(recipes));
+        setPopular(recipes);
       } catch (error) {
         console.log(error);
       }

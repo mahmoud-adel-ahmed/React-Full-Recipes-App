@@ -19,6 +19,7 @@ const Veggie = () => {
           `https://api.spoonacular.com/recipes/random?apiKey=${process.env.REACT_APP_API_KEY}&number=9&tags=vegetarian`
         );
         let { recipes } = response.data;
+        setVeggie(recipes);
         localStorage.setItem("veggie", JSON.stringify(recipes));
       } catch (error) {
         console.log(error);
